@@ -71,7 +71,8 @@ io.on("connection", (socket) => {
   });
 });
 
-const PORT = process.env.PORT | 3000;
+// if we deploy this app on heroku then heroku take port in process.env.PORT if we run this on locally then its take 3000
+const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`App Listen on ${PORT}`);
 });
